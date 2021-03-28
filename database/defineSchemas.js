@@ -13,8 +13,22 @@ const ItemSchema = new Schema({
     price: Number
 });
 
+const UserSchema = new Schema({
+    username: {
+        type: String,
+        required: true
+    },
+    password: {
+        type: String,
+        required: true
+    },
+    ownedItems: [Schema.Types.ObjectId]
+});
+
 const ItemModel = mongoose.model("Item", ItemSchema);
+const UserModel = mongoose.model("User", UserSchema);
 
 module.exports = {
-    item: ItemModel
+    Item: ItemModel,
+    User: UserModel
 };

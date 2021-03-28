@@ -1,25 +1,25 @@
-const express = require("express");
-const createConnection = require("./database/createConnection");
-const populateDatabase = require("./database/populateDatabase");
-const { item } = require("./database/defineSchemas");
-const getSuccessResponse = require("./utilities/getSuccessResponse");
-const getErrorResponse = require("./utilities/getErrorResponse");
-const app = express();
+require("dotenv").config();
+
+const express = require("express"),
+    app = express(),
+    createConnection = require("./database/createConnection"),
+    populateDatabase = require("./database/populateDatabase"),
+    authController = require("./controllers/auth.controller"),
+    itemsController = require("./controllers/items.controller");
 
 
+// initialization
 createConnection();
 //populateDatabase();
 
-app.get("/getAllMarketItems", (req, res) => {
-    item.find({}).limit(50)
-    .then(items => {
-        res.json(items);
-    })
-    .catch(error => {
-        res.send("ERROR XD");
-    })
-});
+// settings
+app.use(express.json());
 
-app.listen(3000, () => {
-    console.log("[app.js] Server is running on port: 3000");
+// controllers
+app.use(authController);
+app.use(itemsController);
+
+// listen
+app.listen(process.env.PORT ?? 3000, () => {
+    console.log(`[app.js] Server is running on port: ${ process.env.PORT ?? 3000 }`);
 });
