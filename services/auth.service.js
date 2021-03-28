@@ -24,7 +24,7 @@ module.exports = {
                 const accessToken = jwt.sign(
                     { _id: user._id, username: user.username },
                     process.env.ACCESS_TOKEN_SECRET,
-                    { expiresIn: `${ process.env.ACCESS_TOKEN_EXPIRATION_TIME }` }
+                    { expiresIn: `${ process.env.ACCESS_TOKEN_EXPIRATION_TIME ?? "5min" }` }
                 );
 
                 return getResponsePayload(SUCCESS, null, { accessToken: accessToken });
