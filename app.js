@@ -16,8 +16,8 @@ createConnection();
 app.use(express.json());
 
 // controllers
-app.use(authController);
-app.use(itemsController);
+app.use("/api", authController);
+app.use("/api", itemsController);
 
 // listen
 app.listen(process.env.PORT ?? 3000, () => {
