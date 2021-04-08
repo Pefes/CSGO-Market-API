@@ -10,7 +10,11 @@ const ItemSchema = new Schema({
     exterior: String,
     rarity: String,
     rarityColor: String,
-    price: Number
+    price: Number,
+    purchasable: {
+        type: Boolean,
+        default: true
+    }
 });
 
 const UserSchema = new Schema({
@@ -21,6 +25,10 @@ const UserSchema = new Schema({
     password: {
         type: String,
         required: true
+    },
+    cash: {
+        type: Number,
+        default: 1000
     },
     ownedItems: [Schema.Types.ObjectId]
 });

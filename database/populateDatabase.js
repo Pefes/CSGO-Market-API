@@ -1,10 +1,11 @@
-const { item } = require("./defineSchemas");
+const db = require("./defineSchemas");
 const items = require("../data/items.data");
 
 const getItemPrice = (item) => {
     if (item.price) {
-        if (item.price.all_time)
+        if (item.price.all_time) {
             return item.price.all_time.median;
+        }
             
         return item.price[Object.keys(item.price)[0]].median;
     }
@@ -25,7 +26,7 @@ const populateItems = () => {
         price: getItemPrice(item)
     }));
 
-    item.insertMany(itemList)
+    db.Item.insertMany(itemList)
     .then(() => {
         console.log("[populateDatabse.js] Items populated");
     })
