@@ -4,18 +4,23 @@ const express = require("express"),
     itemsService = require("../services/items.service");
 
 
-router.get("/getMarketItems", async (req, res) => {
-    const result = await itemsService.getMarketItems(req.query.limit);
+router.post("/getMarketItems", async (req, res) => {
+    const result = await itemsService.getMarketItems(req.body);
     res.json(result);
 });
 
-router.get("/getOwnedItems", authService.authenticateToken, async (req, res) => {
-    const result = await itemsService.getOwnedItems(req.user, req.query.limit);
+router.post("/getOwnedItems", authService.authenticateToken, async (req, res) => {
+    const result = await itemsService.getOwnedItems(req.user, req.body);
     res.json(result);
 });
 
 router.post("/buyItem", authService.authenticateToken, async (req, res) => {
     const result = await itemsService.buyItem(req.user, req.body.itemId);
+    res.json(result);
+});
+
+router.post("/sellItem", authService.authenticateToken, async (req, res) => {
+    const result = await itemsService.sellItem(req.user, req.body.itemId);
     res.json(result);
 });
 
