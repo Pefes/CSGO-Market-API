@@ -1,5 +1,6 @@
-const db = require("./defineSchemas");
-const items = require("../data/items.data");
+const db = require("./defineSchemas"),
+    items = require("../data/items.data"),
+    containersData = require("../data/containersData");
 
 const getItemPrice = (item) => {
     if (item.price) {
@@ -26,7 +27,16 @@ const populateItems = () => {
         price: getItemPrice(item)
     }));
 
-    db.Item.insertMany(itemList)
+    const openableContainers = Array.from(Array(10)).map(() => ({
+        name: "Openable Case",
+        iconUrl: "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXU5A1PIYQNqhpOSV-fRPasw8rsRVx4MwFo5_T3eAQ3i6DMIW0X7ojiwoHax6egMOKGxj4G68Nz3-jCp4itjFWx-ktqfSmtcwqVx6sT",
+        type: "Container",
+        price: 100,
+        openable: true,
+        content: containersData
+    }));
+
+    db.Item.insertMany(itemList.concat(openableContainers))
     .then(() => {
         console.log("[populateDatabse.js] Items populated");
     })

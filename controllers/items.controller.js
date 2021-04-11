@@ -24,4 +24,9 @@ router.post("/sellItem", authService.authenticateToken, async (req, res) => {
     res.json(result);
 });
 
+router.post("/openContainer", authService.authenticateToken, async (req, res) => {
+    const result = await itemsService.openContainer(req.user, req.body.containerId);
+    res.json(result);
+});
+
 module.exports = router;

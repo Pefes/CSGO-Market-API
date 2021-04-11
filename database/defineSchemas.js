@@ -14,7 +14,12 @@ const ItemSchema = new Schema({
     purchasable: {
         type: Boolean,
         default: true
-    }
+    },
+    openable: {
+        type: Boolean,
+        default: false
+    },
+    content: [{ name: String, iconUrl: String }]
 });
 
 const UserSchema = new Schema({

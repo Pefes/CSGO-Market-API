@@ -1,3 +1,4 @@
+const { SUCCESS } = require("../data/messages");
 const db = require("../database/defineSchemas"),
     getResponsePayload = require("../utilities/getResponsePayload"),
     MS = require("../data/messages"),
@@ -19,6 +20,22 @@ const getFindItemsQuery = (queryParams) => {
         ]
     };
 };
+
+const drawItem = (contentItems) => {
+    const drawnItem = contentItems[Math.floor(Math.random() * contentItems.length)];
+    return {
+        name: drawnItem.name,
+        iconUrl: drawnItem.iconUrl,
+        price: 50,
+        exterior: "Factory New",
+        rarity: "Rare",
+        rarityColor: "d32ce6",
+        purchasable: false,
+        type: "Weapon",
+        weaponType: "Rifle",
+        gunType: "AK-47"
+    };
+}
 
     
 module.exports = {
@@ -95,6 +112,26 @@ module.exports = {
             return getResponsePayload(MS.FAIL, MS.SELL_ITEM_NOT_OWNED, null);
         } catch {
             return getResponsePayload(MS.FAIL, MS.SELL_ITEM_FAIL, null);
+        }
+    },
+    openContainer: async (loggedInUserData, containerId) => {
+        try {
+            const container = await db.Item.findById(containerId);
+            const user = await db.User.findById(loggedInUserData._id);
+
+            if (user.ownedItems.includes(containerId) && container.openable) {
+                const drawnItem = drawItem(container.content);
+                const createdItem = await db.Item.create(drawnItem);
+                user.ownedItems.push(createdItem._id);
+                user.save();
+                container.delete();
+
+                return getResponsePayload(SUCCESS, null, { drawnItem: createdItem });
+            }
+
+            return getResponsePayload(FAIL, MS.OPEN_CONTAINER_FAIL, null);
+        } catch {
+            return getResponsePayload(FAIL, MS.OPEN_CONTAINER_FAIL, null);
         }
     }
 }
