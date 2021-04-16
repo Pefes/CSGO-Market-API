@@ -1,4 +1,3 @@
-const { SUCCESS } = require("../data/messages");
 const db = require("../database/defineSchemas"),
     getResponsePayload = require("../utilities/getResponsePayload"),
     MS = require("../data/messages"),
@@ -126,12 +125,12 @@ module.exports = {
                 user.save();
                 container.delete();
 
-                return getResponsePayload(SUCCESS, null, { drawnItem: createdItem });
+                return getResponsePayload(MS.SUCCESS, null, { drawnItem: createdItem });
             }
 
-            return getResponsePayload(FAIL, MS.OPEN_CONTAINER_FAIL, null);
+            return getResponsePayload(MS.FAIL, MS.OPEN_CONTAINER_FAIL, null);
         } catch {
-            return getResponsePayload(FAIL, MS.OPEN_CONTAINER_FAIL, null);
+            return getResponsePayload(MS.FAIL, MS.OPEN_CONTAINER_FAIL, null);
         }
     }
 }
