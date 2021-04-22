@@ -1,3 +1,4 @@
 module.exports = {
-    MAX_ITEMS_RESPONSE: 50
+    DEFAULT_PAGE_SIZE: 25,
+    DEFAULT_PAGE_NUMBER: 0
 }

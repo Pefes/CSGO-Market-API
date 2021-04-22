@@ -1,13 +1,13 @@
 const db = require("../database/defineSchemas"),
     getResponsePayload = require("../utilities/getResponsePayload"),
     MS = require("../data/messages"),
-    { MAX_ITEMS_RESPONSE } = require("../data/constants");
+    { DEFAULT_PAGE_SIZE, DEFAULT_PAGE_NUMBER } = require("../data/constants");
 
 
-const getFindItemsQuery = (queryParams) => {
-    const itemName = queryParams.name ?? "";
-    const itemType = queryParams.type ?? "";
-    const itemExterior = queryParams.exterior ?? "";
+const getFindItemsQuery = (filtersData) => {
+    const itemName = filtersData.name ?? "";
+    const itemType = filtersData.type ?? "";
+    const itemExterior = filtersData.exterior ?? "";
     const regExpOptions = "i";
 
     return {
@@ -38,34 +38,48 @@ const drawItem = (contentItems) => {
 
     
 module.exports = {
-    getMarketItems: async (queryParams) => {
+    getMarketItems: async ({ filtersData, paginatorData }) => {
         try {
-            const limit = parseInt(queryParams.limit ?? MAX_ITEMS_RESPONSE);
+            const pageSize = parseInt(paginatorData.pageSize ?? DEFAULT_PAGE_SIZE);
+            const pageNumber = parseInt(paginatorData.pageNumber ?? DEFAULT_PAGE_NUMBER);
+            const sorting = filtersData.sorting ?? {};
             const query = { 
-                ...getFindItemsQuery(queryParams),
+                ...getFindItemsQuery(filtersData),
                 purchasable: true
             };
 
-            const items = await db.Item.find(query).limit(limit);
+            const items = await db.Item.find(query)
+                .sort(sorting)
+                .skip(pageNumber * pageSize)
+                .limit(pageSize);
+
+            const itemsQuerySize = await db.Item.find(query).countDocuments();
     
-            return getResponsePayload(MS.SUCCESS, null, items);
+            return getResponsePayload(MS.SUCCESS, null, { items, querySize: itemsQuerySize });
         } catch {
             return getResponsePayload(MS.FAIL, MS.GET_ITEMS_FAIL, null);
         }
     },
-    getOwnedItems: async (loggedInUserData, queryParams) => {
+    getOwnedItems: async (loggedInUserData, { filtersData, paginatorData }) => {
         try {
             const user = await db.User.findById(loggedInUserData._id);
-            const limit = parseInt(queryParams.limit ?? MAX_ITEMS_RESPONSE);
+            const pageSize = parseInt(paginatorData.pageSize ?? DEFAULT_PAGE_SIZE);
+            const pageNumber = parseInt(paginatorData.pageNumber ?? DEFAULT_PAGE_NUMBER);
+            const sorting = filtersData.sorting ?? {};
             const query = {
-                ...getFindItemsQuery(queryParams),
+                ...getFindItemsQuery(filtersData),
                 _id: { $in: user.ownedItems },
                 purchasable: false
             };
 
-            const ownedItems = await db.Item.find(query).limit(limit);
+            const ownedItems = await db.Item.find(query)
+                .sort(sorting)
+                .skip(pageNumber * pageSize)
+                .limit(pageSize);
+
+            const itemsQuerySize = await db.Item.find(query).countDocuments();
             
-            return getResponsePayload(MS.SUCCESS, null, ownedItems);
+            return getResponsePayload(MS.SUCCESS, null, { items: ownedItems, querySize: itemsQuerySize });
         } catch {
             return getResponsePayload(MS.FAIL, MS.GET_OWNED_ITEMS_FAIL, null);
         }
