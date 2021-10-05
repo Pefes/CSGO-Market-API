@@ -42,6 +42,7 @@ module.exports = [
         "weaponType": "Rifle",
         "gunType": "AK-47"
     }, {
-        "name": "Extra rare item"
+        "name": "Extra rare item",
+        "iconUrl": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9Q1LO5kNoBhSQl-fROuh28rQR1R2KQFoprOrFBFp0OfHYyQM6ou0l4HfwKekYr-FwG0CuJMp077CrdX3iVHnqhFvYzv7IoOXelU6N0aQpAYzSeIpOQ"
     }
 ];
