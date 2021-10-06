@@ -7,12 +7,14 @@ const db = require("../database/defineSchemas"),
 const getFindItemsQuery = (filtersData) => {
     const itemName = filtersData.name ?? "";
     const itemType = filtersData.type ?? "";
+    const itemRarity = filtersData.rarity ?? "";
     const itemExterior = filtersData.exterior ?? "";
     const regExpOptions = "i";
 
     return {
         name: { $exists: true, $regex: new RegExp(itemName, regExpOptions) },
         type: { $exists: true, $regex: new RegExp(itemType, regExpOptions) },
+        rarity: { $exists: true, $regex: new RegExp(itemRarity, regExpOptions) },
         $or: [
             { exterior: { $regex: new RegExp(itemExterior, regExpOptions) } },
             { exterior: { $exists: false } }
