@@ -14,10 +14,13 @@ const getFindItemsQuery = (filtersData) => {
     return {
         name: { $exists: true, $regex: new RegExp(itemName, regExpOptions) },
         type: { $exists: true, $regex: new RegExp(itemType, regExpOptions) },
-        rarity: { $exists: true, $regex: new RegExp(itemRarity, regExpOptions) },
         $or: [
             { exterior: { $regex: new RegExp(itemExterior, regExpOptions) } },
             { exterior: { $exists: false } }
+        ],
+        $or: [
+            { rarity: { $regex: new RegExp(itemRarity, regExpOptions) } },
+            { rarity: { $exists: false } }
         ]
     };
 };
