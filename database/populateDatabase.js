@@ -2,6 +2,11 @@ const db = require("./defineSchemas"),
     items = require("../data/items.data"),
     containersData = require("../data/containersData");
 
+
+const getItemName = (itemName) => {
+    return itemName.replace(/\s\(.+\)/, "");
+}
+
 const getItemPrice = (item) => {
     if (item.price) {
         if (item.price.all_time) {
@@ -16,7 +21,7 @@ const getItemPrice = (item) => {
 
 const populateItems = () => {
     const itemList = Object.values(items.items_list).map(item => ({
-        name: item.name,
+        name: getItemName(item.name),
         iconUrl: item.icon_url,
         type: item.type,
         weaponType: item.weapon_type,
