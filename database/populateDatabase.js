@@ -35,7 +35,7 @@ const populateItems = () => {
         openable: true,
         content: containersData
     }));
-
+    
     db.Item.insertMany(itemList.concat(openableContainers))
     .then(() => {
         console.log("[populateDatabse.js] Items populated");

@@ -19,7 +19,11 @@ const ItemSchema = new Schema({
         type: Boolean,
         default: false
     },
-    content: [{ name: String, iconUrl: String }]
+    content: [{
+        name: String,
+        iconUrl: String,
+        rarityColor: String
+    }]
 });
 
 const UserSchema = new Schema({
