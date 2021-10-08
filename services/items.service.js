@@ -95,13 +95,18 @@ module.exports = {
 
             if (item.purchasable) {
                 const user = await db.User.findById(loggedInUserData._id);
-                user.ownedItems.push(item._id);
-                user.cash -= item.price;
-                item.purchasable = false;
-                user.save();
-                item.save();
 
-                return getResponsePayload(MS.SUCCESS, null, null);
+                if (user.cash >= item.price) {
+                    user.ownedItems.push(item._id);
+                    user.cash -= item.price;
+                    item.purchasable = false;
+                    user.save();
+                    item.save();
+    
+                    return getResponsePayload(MS.SUCCESS, null, null);
+                } else {
+                    return getResponsePayload(MS.FAIL, MS.BUY_ITEM_NOT_ENOUGH_MONEY, null);
+                }
             }
 
             return getResponsePayload(MS.FAIL, MS.BUY_ITEM_NOT_PURCHASABLE, null);

@@ -8,6 +8,7 @@ module.exports = {
     GET_OWNED_ITEMS_FAIL: "Cannot fetch owned items data",
     BUY_ITEM_FAIL: "Cannot buy item",
     BUY_ITEM_NOT_PURCHASABLE: "Item is not purchasable",
+    BUY_ITEM_NOT_ENOUGH_MONEY: "You have not enough money",
     SELL_ITEM_FAIL: "Cannot sell item",
     SELL_ITEM_NOT_OWNED: "Item not owned",
     OPEN_CONTAINER_FAIL: "Cannot open container"
