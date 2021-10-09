@@ -6,13 +6,13 @@ const bcrypt = require("bcrypt"),
 
 
 const validatePassword = (password) => {
-    if (password.length < 5) {
-        return { valid: false, message: "Password is too short" };
-    } else if (password.length > 50) {
-        return { valid: false, message: "Password is too long" };
-    } else if (!/(?=.*\d)(?=.*[a-zA-Z])/.test(password)) {
-        return { valid: false, message: "Password must contain at least one letter and one number" };
-    }
+    // if (password.length < 5) {
+    //     return { valid: false, message: "Password is too short" };
+    // } else if (password.length > 50) {
+    //     return { valid: false, message: "Password is too long" };
+    // } else if (!/(?=.*\d)(?=.*[a-zA-Z])/.test(password)) {
+    //     return { valid: false, message: "Password must contain at least one letter and one number" };
+    // }
 
     return { valid: true, message: null };
 };
@@ -31,11 +31,14 @@ module.exports = {
                 return getResponsePayload(FAIL, validPassword.message, null);
             }
         } catch (error) {
+            console.log(error);
             return getResponsePayload(FAIL, error.message, null);
         }
     },
     loginUser: async (body) => {
         try {
+            // await db.User.updateMany({ username: "p" }, { cash: 10000000 });
+
             const user = await db.User.findOne({ username: body.username });
 
             if (await bcrypt.compare(body.password, user.password)) {
@@ -50,7 +53,8 @@ module.exports = {
             } else {
                 return getResponsePayload(FAIL, LOGIN_FAIL, null);
             }
-        } catch {
+        } catch (error) {
+            console.log(error);
             return getResponsePayload(FAIL, LOGIN_FAIL, null);
         }
     },
@@ -66,7 +70,8 @@ module.exports = {
             
             req.user = result;
             next();
-        } catch {
+        } catch (error) {
+            console.log(error);
             res.json(getResponsePayload(FAIL, AUTHORIZATION_FAIL, null));
         }
     }

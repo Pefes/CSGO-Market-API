@@ -32,7 +32,7 @@ const populateItems = () => {
         price: getItemPrice(item)
     }));
 
-    const openableContainers = Array.from(Array(10)).map(() => ({
+    const openableContainers = Array.from(Array(100)).map(() => ({
         name: "Openable Case",
         iconUrl: "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXU5A1PIYQNqhpOSV-fRPasw8rsRVx4MwFo5_T3eAQ3i6DMIW0X7ojiwoHax6egMOKGxj4G68Nz3-jCp4itjFWx-ktqfSmtcwqVx6sT",
         type: "Container",
@@ -41,8 +41,6 @@ const populateItems = () => {
         content: containersData
     }));
     
-    // db.User.updateMany({ username: "p" }, { cash: 10000000 });
-
     db.Item.insertMany(itemList.concat(openableContainers))
     .then(() => {
         console.log("[populateDatabse.js] Items populated");

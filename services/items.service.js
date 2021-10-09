@@ -61,7 +61,8 @@ module.exports = {
             const itemsQuerySize = await db.Item.find(query).countDocuments();
     
             return getResponsePayload(MS.SUCCESS, null, { items, querySize: itemsQuerySize });
-        } catch {
+        } catch (error) {
+            console.log(error);
             return getResponsePayload(MS.FAIL, MS.GET_ITEMS_FAIL, null);
         }
     },
@@ -85,7 +86,8 @@ module.exports = {
             const itemsQuerySize = await db.Item.find(query).countDocuments();
             
             return getResponsePayload(MS.SUCCESS, null, { items: ownedItems, querySize: itemsQuerySize });
-        } catch {
+        } catch (error) {
+            console.log(error);
             return getResponsePayload(MS.FAIL, MS.GET_OWNED_ITEMS_FAIL, null);
         }
     },
@@ -110,7 +112,8 @@ module.exports = {
             }
 
             return getResponsePayload(MS.FAIL, MS.BUY_ITEM_NOT_PURCHASABLE, null);
-        } catch {
+        } catch (error) {
+            console.log(error);
             return getResponsePayload(MS.FAIL, MS.BUY_ITEM_FAIL, null);
         }
     },
@@ -133,7 +136,8 @@ module.exports = {
             }
 
             return getResponsePayload(MS.FAIL, MS.SELL_ITEM_NOT_OWNED, null);
-        } catch {
+        } catch (error) {
+            console.log(error);
             return getResponsePayload(MS.FAIL, MS.SELL_ITEM_FAIL, null);
         }
     },
@@ -153,7 +157,8 @@ module.exports = {
             }
 
             return getResponsePayload(MS.FAIL, MS.OPEN_CONTAINER_FAIL, null);
-        } catch {
+        } catch (error) {
+            console.log(error);
             return getResponsePayload(MS.FAIL, MS.OPEN_CONTAINER_FAIL, null);
         }
     }
