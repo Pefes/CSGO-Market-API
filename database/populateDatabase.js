@@ -41,6 +41,8 @@ const populateItems = () => {
         content: containersData
     }));
     
+    // db.User.updateMany({ username: "p" }, { cash: 10000000 });
+
     db.Item.insertMany(itemList.concat(openableContainers))
     .then(() => {
         console.log("[populateDatabse.js] Items populated");

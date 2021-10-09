@@ -30,10 +30,10 @@ const drawItem = (contentItems) => {
     return {
         name: drawnItem.name,
         iconUrl: drawnItem.iconUrl,
-        price: 50,
+        price: Math.floor(Math.random() * (1000 - 50 + 1) + 50),
         exterior: "Factory New",
-        rarity: "Rare",
-        rarityColor: "d32ce6",
+        rarity: drawnItem.rarity,
+        rarityColor: drawnItem.rarityColor,
         purchasable: false,
         type: "Weapon",
         weaponType: "Rifle",

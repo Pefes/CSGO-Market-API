@@ -5,6 +5,7 @@ module.exports = [
         "type": "Weapon",
         "weaponType": "Rifle",
         "gunType": "AK-47",
+        "rarity": "Covert",
         "rarityColor": "eb4b4b"
     }, {
         "name": "AK-47 | Asiimov",
@@ -12,6 +13,7 @@ module.exports = [
         "type": "Weapon",
         "weaponType": "Rifle",
         "gunType": "AK-47",
+        "rarity": "Covert",
         "rarityColor": "eb4b4b"
     }, {
         "name": "AK-47 | Baroque Purple",
@@ -19,6 +21,7 @@ module.exports = [
         "type": "Weapon",
         "weaponType": "Rifle",
         "gunType": "AK-47",
+        "rarity": "Industrial Grade",
         "rarityColor": "5e98d9"
     }, {
         "name": "AK-47 | Black Laminate",
@@ -26,6 +29,7 @@ module.exports = [
         "type": "Weapon",
         "weaponType": "Rifle",
         "gunType": "AK-47",
+        "rarity": "Mil-Spec Grade",
         "rarityColor": "4b69ff"
     }, {
         "name": "AK-47 | Bloodsport",
@@ -33,6 +37,7 @@ module.exports = [
         "type": "Weapon",
         "weaponType": "Rifle",
         "gunType": "AK-47",
+        "rarity": "Covert",
         "rarityColor": "eb4b4b"
     }, {
         "name": "AK-47 | Blue Laminate",
@@ -40,6 +45,7 @@ module.exports = [
         "type": "Weapon",
         "weaponType": "Rifle",
         "gunType": "AK-47",
+        "rarity": "Restricted",
         "rarityColor": "8847ff"
     }, {
         "name": "AK-47 | Case Hardened",
@@ -47,9 +53,11 @@ module.exports = [
         "type": "Weapon",
         "weaponType": "Rifle",
         "gunType": "AK-47",
+        "rarity": "Classified",
         "rarityColor": "d32ce6"
     }, {
         "name": "Extra rare item",
+        "rarity": "Extra rare",
         "rarityColor": "ffc800",
         "iconUrl": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9Q1LO5kNoBhSQl-fROuh28rQR1R2KQFoprOrFBFp0OfHYyQM6ou0l4HfwKekYr-FwG0CuJMp077CrdX3iVHnqhFvYzv7IoOXelU6N0aQpAYzSeIpOQ"
     }
