@@ -29,7 +29,16 @@ const ItemSchema = new Schema({
 const UserSchema = new Schema({
     username: {
         type: String,
-        required: true
+        required: true,
+        minLength: [5, "Username is too short"],
+        maxLength: [50, "Username is too long"],
+        validate: {
+            validator: async function(username) {
+                const user = await this.constructor.findOne({ username: username });
+                return !user;
+            },
+            message: "Username already exists"
+        }
     },
     password: {
         type: String,

@@ -5,15 +5,33 @@ const bcrypt = require("bcrypt"),
     { SUCCESS, FAIL, REGISTER_FAIL, LOGIN_FAIL, AUTHORIZATION_FAIL } = require("../data/messages");
 
 
+const validatePassword = (password) => {
+    if (password.length < 5) {
+        return { valid: false, message: "Password is too short" };
+    } else if (password.length > 50) {
+        return { valid: false, message: "Password is too long" };
+    } else if (!/(?=.*\d)(?=.*[a-zA-Z])/.test(password)) {
+        return { valid: false, message: "Password must contain at least one letter and one number" };
+    }
+
+    return { valid: true, message: null };
+};
+
 module.exports = {
     registerUser: async (body) => {
         try {
-            const hashedPassword = await bcrypt.hash(body.password, 10);
-            await db.User.create({ username: body.username, password: hashedPassword });
+            const validPassword = validatePassword(body.password);
 
-            return getResponsePayload(SUCCESS, null, null);
-        } catch {
-            return getResponsePayload(FAIL, REGISTER_FAIL, null);
+            if (validPassword.valid) {
+                const hashedPassword = await bcrypt.hash(body.password, 10);
+                await db.User.create({ username: body.username, password: hashedPassword });
+    
+                return getResponsePayload(SUCCESS, null, null);
+            } else {
+                return getResponsePayload(FAIL, validPassword.message, null);
+            }
+        } catch (error) {
+            return getResponsePayload(FAIL, error.message, null);
         }
     },
     loginUser: async (body) => {
