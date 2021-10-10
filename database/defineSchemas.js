@@ -22,6 +22,7 @@ const ItemSchema = new Schema({
     content: [{
         name: String,
         iconUrl: String,
+        rarity: String,
         rarityColor: String
     }]
 });
