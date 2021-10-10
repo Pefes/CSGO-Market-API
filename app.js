@@ -2,6 +2,7 @@ require("dotenv").config();
 
 const express = require("express"),
     app = express(),
+    cors = require("cors"),
     createConnection = require("./database/createConnection"),
     populateDatabase = require("./database/populateDatabase"),
     authController = require("./controllers/auth.controller"),
@@ -14,6 +15,7 @@ createConnection();
 
 // settings
 app.use(express.json());
+app.use(cors());
 
 // controllers
 app.use("/api", authController);
