@@ -54,9 +54,10 @@ module.exports = {
                     encoding: null
                 }, (error, _, body) => {
                     if (error) {
+                        console.log(error);
                         res.json(getResponsePayload(MS.FAIL, MS.IMAGE_FAIL, null));
                     } else {
-                        res.set("Content-Type", "image/png");
+                        res.setHeader("Content-Type", "image/png");
                         res.send(body);
                     }
                 });
