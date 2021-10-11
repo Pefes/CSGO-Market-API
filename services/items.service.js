@@ -1,6 +1,7 @@
 const db = require("../database/defineSchemas"),
     getResponsePayload = require("../utilities/getResponsePayload"),
     MS = require("../data/messages"),
+    request = require("request"),
     { DEFAULT_PAGE_SIZE, DEFAULT_PAGE_NUMBER } = require("../data/constants");
 
 
@@ -43,6 +44,30 @@ const drawItem = (contentItems) => {
 
     
 module.exports = {
+    getItemImage: (res, imageId) => {
+        try {
+            if (imageId && process.env.STEAM_CDN) {
+                const imageUrl = process.env.STEAM_CDN + imageId;
+
+                request({ 
+                    uri: imageUrl,
+                    encoding: null
+                }, (error, _, body) => {
+                    if (error) {
+                        res.json(getResponsePayload(MS.FAIL, MS.IMAGE_FAIL, null));
+                    } else {
+                        res.set("Content-Type", "image/png");
+                        res.send(body);
+                    }
+                });
+            } else {
+                res.json(getResponsePayload(MS.FAIL, MS.IMAGE_FAIL_URL, null));
+            }
+        } catch (error) {
+            console.log(error);
+            res.json(getResponsePayload(MS.FAIL, MS.IMAGE_FAIL, null));
+        }
+    },
     getMarketItems: async ({ filtersData, paginatorData }) => {
         try {
             const pageSize = parseInt(paginatorData.pageSize ?? DEFAULT_PAGE_SIZE);

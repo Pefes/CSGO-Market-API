@@ -11,5 +11,7 @@ module.exports = {
     BUY_ITEM_NOT_ENOUGH_MONEY: "You have not enough money",
     SELL_ITEM_FAIL: "Cannot sell item",
     SELL_ITEM_NOT_OWNED: "Item not owned",
-    OPEN_CONTAINER_FAIL: "Cannot open container"
+    OPEN_CONTAINER_FAIL: "Cannot open container",
+    IMAGE_FAIL: "Cannot get image",
+    IMAGE_FAIL_URL: "Image URL is wrong",
 }
