@@ -31,15 +31,15 @@ const UserSchema = new Schema({
     username: {
         type: String,
         required: true,
-        // minLength: [5, "Username is too short"],
-        // maxLength: [50, "Username is too long"],
-        // validate: {
-        //     validator: async function(username) {
-        //         const user = await this.constructor.findOne({ username: username });
-        //         return !user;
-        //     },
-        //     message: "Username already exists"
-        // }
+        minLength: [5, "Username is too short (min: 5, max: 50)"],
+        maxLength: [50, "Username is too long (min: 5, max: 50)"],
+        validate: {
+            validator: async function(username) {
+                const user = await this.constructor.findOne({ username: username });
+                return !user;
+            },
+            message: "Username already exists"
+        }
     },
     password: {
         type: String,

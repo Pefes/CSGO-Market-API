@@ -11,7 +11,7 @@ const express = require("express"),
 
 // initialization
 createConnection();
-// populateDatabase();
+populateDatabase();
 
 // settings
 app.use(express.json());

@@ -53,7 +53,7 @@ npm start
 
 ## Deployment
 
-\<in-progress>
+https://csgo-market-api.herokuapp.com/
 
 ## Built With
 

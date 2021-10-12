@@ -122,8 +122,8 @@ module.exports = {
                     user.ownedItems.push(item._id);
                     user.cash -= item.price;
                     item.purchasable = false;
-                    user.save();
-                    item.save();
+                    user.save({ validateBeforeSave: false });
+                    item.save({ validateBeforeSave: false });
     
                     return getResponsePayload(MS.SUCCESS, null, null);
                 } else {
@@ -148,8 +148,8 @@ module.exports = {
                     user.ownedItems = user.ownedItems.filter(item => item._id.toString() !== itemId);
                     user.cash += item.price;
                     item.purchasable = true;
-                    user.save();
-                    item.save();
+                    user.save({ validateBeforeSave: false });
+                    item.save({ validateBeforeSave: false });
 
                     return getResponsePayload(MS.SUCCESS, null, null);
                 }
@@ -170,7 +170,7 @@ module.exports = {
                 const drawnItem = drawItem(container.content);
                 const createdItem = await db.Item.create(drawnItem);
                 user.ownedItems.push(createdItem._id);
-                user.save();
+                user.save({ validateBeforeSave: false });
                 container.delete();
 
                 return getResponsePayload(MS.SUCCESS, null, { drawnItem: createdItem });
