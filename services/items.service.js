@@ -1,7 +1,8 @@
 const db = require("../database/defineSchemas"),
     getResponsePayload = require("../utilities/getResponsePayload"),
     MS = require("../data/messages"),
-    request = require("request"),
+    got = require("got"),
+    fs = require("fs"),
     { DEFAULT_PAGE_SIZE, DEFAULT_PAGE_NUMBER } = require("../data/constants");
 
 
@@ -42,31 +43,24 @@ const drawItem = (contentItems) => {
     };
 }
 
+const getNoImage = () => {
+    return fs.readFileSync("./data/images/no-image.png")
+}
     
 module.exports = {
-    getItemImage: (res, imageId) => {
+    getItemImage: async (imageId) => {
         try {
             if (imageId && process.env.STEAM_CDN) {
                 const imageUrl = process.env.STEAM_CDN + imageId;
-
-                request({ 
-                    uri: imageUrl,
-                    encoding: null
-                }, (error, _, body) => {
-                    if (error) {
-                        console.log(error);
-                        res.json(getResponsePayload(MS.FAIL, MS.IMAGE_FAIL, null));
-                    } else {
-                        res.setHeader("Content-Type", "image/png");
-                        res.send(body);
-                    }
-                });
+                const response = await got(imageUrl).buffer();
+                return response;
             } else {
-                res.json(getResponsePayload(MS.FAIL, MS.IMAGE_FAIL_URL, null));
+                console.log(error);
+                return await getNoImage();
             }
         } catch (error) {
-            console.log(error);
-            res.json(getResponsePayload(MS.FAIL, MS.IMAGE_FAIL, null));
+            console.log(error)
+            return await getNoImage();
         }
     },
     getMarketItems: async ({ filtersData, paginatorData }) => {

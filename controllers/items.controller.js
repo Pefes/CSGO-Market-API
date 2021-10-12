@@ -4,8 +4,10 @@ const express = require("express"),
     itemsService = require("../services/items.service");
 
 
-router.get("/getItemImage", (req, res) => {
-    itemsService.getItemImage(res, req.query.imageUrl);
+router.get("/getItemImage", async (req, res) => {
+    const result = await itemsService.getItemImage(req.query.imageUrl);
+    res.setHeader("Content-Type", "image/png");
+    res.send(result);
 });
 
 router.post("/getMarketItems", async (req, res) => {
