@@ -63,6 +63,14 @@ module.exports = {
             return await getNoImage();
         }
     },
+    getTryOutItems: async () => {
+        try {
+            const openableItems = await db.Item.find({ openable: true }).limit(3);
+            return getResponsePayload(MS.SUCCESS, null, openableItems);
+        } catch (error) {
+            return getResponsePayload(MS.FAIL, MS.GET_TRY_OUT_ITEMS_FAIL, null);
+        }
+    },
     getMarketItems: async ({ filtersData, paginatorData }) => {
         try {
             const pageSize = parseInt(paginatorData.pageSize ?? DEFAULT_PAGE_SIZE);
@@ -177,6 +185,21 @@ module.exports = {
             }
 
             return getResponsePayload(MS.FAIL, MS.OPEN_CONTAINER_FAIL, null);
+        } catch (error) {
+            console.log(error);
+            return getResponsePayload(MS.FAIL, MS.OPEN_CONTAINER_FAIL, null);
+        }
+    },
+    openTryOutContainer: async (containerId) => {
+        try {
+            const container = await db.Item.findById(containerId);
+
+            if (container.openable) {
+                const drawnItem = drawItem(container.content);
+                return getResponsePayload(MS.SUCCESS, null, { drawnItem: drawnItem });
+            } else {
+                return getResponsePayload(MS.FAIL, MS.OPEN_CONTAINER_FAIL, null);
+            }
         } catch (error) {
             console.log(error);
             return getResponsePayload(MS.FAIL, MS.OPEN_CONTAINER_FAIL, null);

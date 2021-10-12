@@ -4,6 +4,7 @@ module.exports = {
     AUTHORIZATION_FAIL: "Not authorized",
     REGISTER_FAIL: "Cannot register user",
     LOGIN_FAIL: "Cannot login user",
+    GET_TRY_OUT_ITEMS_FAIL: "Cannot fetch try out items",
     GET_ITEMS_FAIL: "Cannot fetch items data",
     GET_OWNED_ITEMS_FAIL: "Cannot fetch owned items data",
     BUY_ITEM_FAIL: "Cannot buy item",
