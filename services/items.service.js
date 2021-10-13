@@ -11,19 +11,27 @@ const getFindItemsQuery = (filtersData) => {
     const itemType = filtersData.type ?? "";
     const itemRarity = filtersData.rarity ?? "";
     const itemExterior = filtersData.exterior ?? "";
+    const itemOpenable = filtersData.openable;
     const regExpOptions = "i";
 
     return {
         name: { $exists: true, $regex: new RegExp(itemName, regExpOptions) },
         type: { $exists: true, $regex: new RegExp(itemType, regExpOptions) },
-        $or: [
-            { exterior: { $regex: new RegExp(itemExterior, regExpOptions) } },
-            { exterior: { $exists: false } }
+        $and: [
+            {
+                $or: [
+                    { exterior: { $regex: new RegExp(itemExterior, regExpOptions) } },
+                    { exterior: { $exists: false } }
+                ]
+            },
+            {
+                $or: [
+                    { rarity: { $regex: new RegExp(itemRarity, regExpOptions) } },
+                    { rarity: { $exists: false } }
+                ]
+            },
         ],
-        $or: [
-            { rarity: { $regex: new RegExp(itemRarity, regExpOptions) } },
-            { rarity: { $exists: false } }
-        ]
+        ...(itemOpenable === "true" || itemOpenable === "false" ? { openable: itemOpenable } : {})
     };
 };
 
