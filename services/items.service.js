@@ -6,6 +6,10 @@ const db = require("../database/defineSchemas"),
     { DEFAULT_PAGE_SIZE, DEFAULT_PAGE_NUMBER } = require("../data/constants");
 
 
+const escapeRegExp = (str) => {
+    return str.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+};
+
 const getFindItemsQuery = (filtersData) => {
     const itemName = filtersData.name ?? "";
     const itemType = filtersData.type ?? "";
@@ -13,20 +17,20 @@ const getFindItemsQuery = (filtersData) => {
     const itemExterior = filtersData.exterior ?? "";
     const itemOpenable = filtersData.openable;
     const regExpOptions = "i";
-
+    
     return {
-        name: { $exists: true, $regex: new RegExp(itemName, regExpOptions) },
-        type: { $exists: true, $regex: new RegExp(itemType, regExpOptions) },
+        name: { $exists: true, $regex: new RegExp(escapeRegExp(itemName), regExpOptions) },
+        type: { $exists: true, $regex: new RegExp(escapeRegExp(itemType), regExpOptions) },
         $and: [
             {
                 $or: [
-                    { exterior: { $regex: new RegExp(itemExterior, regExpOptions) } },
+                    { exterior: { $regex: new RegExp(escapeRegExp(itemExterior), regExpOptions) } },
                     { exterior: { $exists: false } }
                 ]
             },
             {
                 $or: [
-                    { rarity: { $regex: new RegExp(itemRarity, regExpOptions) } },
+                    { rarity: { $regex: new RegExp(escapeRegExp(itemRarity), regExpOptions) } },
                     { rarity: { $exists: false } }
                 ]
             },

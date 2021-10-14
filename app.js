@@ -6,12 +6,13 @@ const express = require("express"),
     createConnection = require("./database/createConnection"),
     populateDatabase = require("./database/populateDatabase"),
     authController = require("./controllers/auth.controller"),
-    itemsController = require("./controllers/items.controller");
+    itemsController = require("./controllers/items.controller"),
+    utilitiesController = require("./controllers/utilities.controller");
 
 
 // initialization
 createConnection();
-populateDatabase();
+// populateDatabase();
 
 // settings
 app.use(express.json());
@@ -20,6 +21,7 @@ app.use(cors());
 // controllers
 app.use("/api", authController);
 app.use("/api", itemsController);
+app.use("/api", utilitiesController);
 
 // listen
 app.listen(process.env.PORT ?? 3000, () => {
