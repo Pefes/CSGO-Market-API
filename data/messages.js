@@ -16,5 +16,6 @@ module.exports = {
     IMAGE_FAIL: "Cannot get image",
     IMAGE_FAIL_URL: "Image URL is wrong",
     GET_AUTOCOMPLETE_OPTIONS_FAIL: "Cannot get autocomplete options",
-    GET_AUTOCOMPLETE_OPTIONS_FAIL_NO_PROPERTY: "Cannot get autocomplete options. You need to pass property"
+    GET_AUTOCOMPLETE_OPTIONS_FAIL_NO_PROPERTY: "Cannot get autocomplete options. You need to pass property",
+    SET_USER_DARK_THEME_OPTION: "Cannot set user options"
 }

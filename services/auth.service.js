@@ -47,7 +47,11 @@ module.exports = {
                     { expiresIn: expiresIn }
                 );
 
-                return getResponsePayload(SUCCESS, null, { accessToken, expiresIn, userData: { username: user.username, cash: user.cash } });
+                return getResponsePayload(SUCCESS, null, { accessToken, expiresIn, userData: {
+                    username: user.username,
+                    cash: user.cash,
+                    darkTheme: user.darkTheme
+                }});
             } else {
                 return getResponsePayload(FAIL, LOGIN_FAIL, null);
             }
