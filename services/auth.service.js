@@ -50,7 +50,7 @@ module.exports = {
                 return getResponsePayload(SUCCESS, null, { accessToken, expiresIn, userData: {
                     username: user.username,
                     cash: user.cash,
-                    darkTheme: user.darkTheme
+                    userSettings: user.settings
                 }});
             } else {
                 return getResponsePayload(FAIL, LOGIN_FAIL, null);

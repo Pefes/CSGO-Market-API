@@ -9,8 +9,8 @@ router.get("/getAutocompleteOptions", async (req, res) => {
     res.json(result);
 });
 
-router.post("/setUserDarkThemeOption", authService.authenticateToken, async (req, res) => {
-    const result = await utilitiesService.setUserDarkThemeOption(req.user, req.body.darkTheme);
+router.post("/setUserSettings", authService.authenticateToken, async (req, res) => {
+    const result = await utilitiesService.setUserSettings(req.user, req.body.userSettings);
     res.json(result);
 });
 

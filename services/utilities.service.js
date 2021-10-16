@@ -1,6 +1,6 @@
 const db = require("../database/defineSchemas"),
     getResponsePayload = require("../utilities/getResponsePayload"),
-    { SUCCESS, FAIL, GET_AUTOCOMPLETE_OPTIONS_FAIL, GET_AUTOCOMPLETE_OPTIONS_FAIL_NO_PROPERTY, SET_USER_DARK_THEME_OPTION } = require("../data/messages");
+    { SUCCESS, FAIL, GET_AUTOCOMPLETE_OPTIONS_FAIL, GET_AUTOCOMPLETE_OPTIONS_FAIL_NO_PROPERTY, SET_USER_SETTINGS_FAIL } = require("../data/messages");
 
 
 module.exports = {
@@ -18,20 +18,19 @@ module.exports = {
             return getResponsePayload(FAIL, GET_AUTOCOMPLETE_OPTIONS_FAIL, null);
         }
     },
-    setUserDarkThemeOption: async (loggedInUserData, darkTheme) => {
+    setUserSettings: async (loggedInUser, newUserSettings) => {
         try {
-            if (darkTheme != null) {
-                const user = await db.User.findById(loggedInUserData._id);
-                user.darkTheme = darkTheme;
+            if (newUserSettings) {
+                const user = await db.User.findById(loggedInUser._id);
+                user.settings = { ...newUserSettings };
                 user.save({ validateBeforeSave: false });
-
                 return getResponsePayload(SUCCESS, null, null);
             } else {
-                return getResponsePayload(FAIL, SET_USER_DARK_THEME_OPTION, null);
+                return getResponsePayload(FAIL, SET_USER_SETTINGS_FAIL, null);
             }
         } catch (error) {
             console.log(error);
-            return getResponsePayload(FAIL, SET_USER_DARK_THEME_OPTION, null);
+            return getResponsePayload(FAIL, SET_USER_SETTINGS_FAIL, null);
         }
     }
 }

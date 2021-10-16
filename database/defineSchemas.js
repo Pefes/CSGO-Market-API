@@ -49,9 +49,15 @@ const UserSchema = new Schema({
         type: Number,
         default: 1000
     },
-    darkTheme: {
-        type: Boolean,
-        default: true
+    settings: {
+        darkTheme: {
+            type: Boolean,
+            default: true
+        },
+        language: {
+            type: String,
+            default: "en"
+        }
     },
     ownedItems: [Schema.Types.ObjectId]
 });
