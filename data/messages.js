@@ -17,5 +17,6 @@ module.exports = {
     IMAGE_FAIL_URL: "Image URL is wrong",
     GET_AUTOCOMPLETE_OPTIONS_FAIL: "Cannot get autocomplete options",
     GET_AUTOCOMPLETE_OPTIONS_FAIL_NO_PROPERTY: "Cannot get autocomplete options. You need to pass property",
-    SET_USER_SETTINGS_FAIL: "Cannot set user settings"
+    SET_USER_SETTINGS_FAIL: "Cannot set user settings",
+    GET_LAST_OPENED_ITEMS_FAIL: "Cannot get last opened"
 }

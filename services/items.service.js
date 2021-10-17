@@ -2,62 +2,9 @@ const db = require("../database/defineSchemas"),
     getResponsePayload = require("../utilities/getResponsePayload"),
     MS = require("../data/messages"),
     got = require("got"),
-    fs = require("fs"),
-    { DEFAULT_PAGE_SIZE, DEFAULT_PAGE_NUMBER } = require("../data/constants");
+    { DEFAULT_PAGE_SIZE, DEFAULT_PAGE_NUMBER } = require("../data/constants"),
+    { getFindItemsQuery, drawItem, getNoImage, addLastOpenedItem } = require("../utilities/itemFunctions");
 
-
-const escapeRegExp = (str) => {
-    return str.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
-};
-
-const getFindItemsQuery = (filtersData) => {
-    const itemName = filtersData.name ?? "";
-    const itemType = filtersData.type ?? "";
-    const itemRarity = filtersData.rarity ?? "";
-    const itemExterior = filtersData.exterior ?? "";
-    const itemOpenable = filtersData.openable;
-    const regExpOptions = "i";
-    
-    return {
-        name: { $exists: true, $regex: new RegExp(escapeRegExp(itemName), regExpOptions) },
-        type: { $exists: true, $regex: new RegExp(escapeRegExp(itemType), regExpOptions) },
-        $and: [
-            {
-                $or: [
-                    { exterior: { $regex: new RegExp(escapeRegExp(itemExterior), regExpOptions) } },
-                    { exterior: { $exists: false } }
-                ]
-            },
-            {
-                $or: [
-                    { rarity: { $regex: new RegExp(escapeRegExp(itemRarity), regExpOptions) } },
-                    { rarity: { $exists: false } }
-                ]
-            },
-        ],
-        ...(itemOpenable === "true" || itemOpenable === "false" ? { openable: itemOpenable } : {})
-    };
-};
-
-const drawItem = (contentItems) => {
-    const drawnItem = contentItems[Math.floor(Math.random() * contentItems.length)];
-    return {
-        name: drawnItem.name,
-        iconUrl: drawnItem.iconUrl,
-        price: Math.floor(Math.random() * (1000 - 50 + 1) + 50),
-        exterior: "Factory New",
-        rarity: drawnItem.rarity,
-        rarityColor: drawnItem.rarityColor,
-        purchasable: false,
-        type: "Weapon",
-        weaponType: "Rifle",
-        gunType: "AK-47"
-    };
-}
-
-const getNoImage = () => {
-    return fs.readFileSync("./data/images/no-image.png")
-}
     
 module.exports = {
     getItemImage: async (imageId) => {
@@ -81,6 +28,15 @@ module.exports = {
             return getResponsePayload(MS.SUCCESS, null, openableItems);
         } catch (error) {
             return getResponsePayload(MS.FAIL, MS.GET_TRY_OUT_ITEMS_FAIL, null);
+        }
+    },
+    getLastOpenedItems: async () => {
+        try {
+            const lastOpenedItems = await db.LastOpened.find().sort({ openedDate: "asc" }).limit(20);
+            return getResponsePayload(MS.SUCCESS, null, lastOpenedItems);
+        } catch (error) {
+            console.log(error);
+            return getResponsePayload(MS.FAIL, MS.GET_LAST_OPENED_ITEMS_FAIL, null);
         }
     },
     getMarketItems: async ({ filtersData, paginatorData }) => {
@@ -192,6 +148,20 @@ module.exports = {
                 user.ownedItems.push(createdItem._id);
                 user.save({ validateBeforeSave: false });
                 container.delete();
+                
+                await addLastOpenedItem({
+                    containerName: container.name,
+                    containerIconUrl: container.iconUrl,
+                    itemName: drawnItem.name,
+                    itemIconUrl: drawnItem.iconUrl,
+                    itemType: drawnItem.type,
+                    itemExterior: drawnItem.exterior,
+                    itemRarity: drawnItem.rarity,
+                    itemRarityColor: drawnItem.rarityColor,
+                    itemPrice: drawnItem.price,
+                    ownerUsername: user.username,
+                    openedDate: new Date()
+                });
 
                 return getResponsePayload(MS.SUCCESS, null, { drawnItem: createdItem });
             }

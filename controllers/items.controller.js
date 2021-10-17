@@ -15,6 +15,11 @@ router.get("/getTryOutItems", async (req, res) => {
     res.json(result);
 });
 
+router.get("/getLastOpenedItems", async (req, res) => {
+    const result = await itemsService.getLastOpenedItems();
+    res.json(result);
+});
+
 router.post("/getMarketItems", async (req, res) => {
     const result = await itemsService.getMarketItems(req.body);
     res.json(result);

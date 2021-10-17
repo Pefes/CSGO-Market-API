@@ -5,8 +5,6 @@ const ItemSchema = new Schema({
     name: String,
     iconUrl: String,
     type: String,
-    weaponType: String,
-    gunType: String,
     exterior: String,
     rarity: String,
     rarityColor: String,
@@ -25,6 +23,20 @@ const ItemSchema = new Schema({
         rarity: String,
         rarityColor: String
     }]
+});
+
+const LastOpenedSchema = new Schema({
+    containerName: String,
+    containerIconUrl: String,
+    itemName: String,
+    itemIconUrl: String,
+    itemType: String,
+    itemExterior: String,
+    itemRarity: String,
+    itemRarityColor: String,
+    itemPrice: Number,
+    ownerUsername: String,
+    openedDate: Date
 });
 
 const UserSchema = new Schema({
@@ -63,9 +75,11 @@ const UserSchema = new Schema({
 });
 
 const ItemModel = mongoose.model("Item", ItemSchema);
+const LastOpenedModel = mongoose.model("LastOpened", LastOpenedSchema);
 const UserModel = mongoose.model("User", UserSchema);
 
 module.exports = {
     Item: ItemModel,
+    LastOpened: LastOpenedModel,
     User: UserModel
 };
