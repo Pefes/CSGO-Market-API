@@ -12,7 +12,7 @@ const express = require("express"),
 
 // initialization
 createConnection();
-populateDatabase();
+// populateDatabase();
 runCron();
 
 

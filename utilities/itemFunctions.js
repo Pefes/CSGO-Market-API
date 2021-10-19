@@ -60,7 +60,7 @@ module.exports = {
 
             if (lastOpenedCount >= 20) {
                 const oldestOpenedItem = await db.LastOpened.findOne().sort({ openedDate: "asc" });
-                oldestOpenedItem.delete();
+                await oldestOpenedItem.delete();
             }
         } catch (error) {
             console.log(error);

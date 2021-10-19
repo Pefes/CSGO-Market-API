@@ -4,7 +4,7 @@ const cron = require("node-cron"),
 
 
 const runCron = () => {
-    cron.schedule("*/5 * * * * *", () => {
+    cron.schedule("*/15 * * * * *", () => {
         addLastOpenedItem({
             ...lastOpenedItemsData[Math.floor(Math.random() * lastOpenedItemsData.length)],
             openedDate: new Date()
