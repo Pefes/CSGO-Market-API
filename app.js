@@ -7,12 +7,14 @@ const express = require("express"),
     populateDatabase = require("./database/populateDatabase"),
     authController = require("./controllers/auth.controller"),
     itemsController = require("./controllers/items.controller"),
-    utilitiesController = require("./controllers/utilities.controller");
-
+    utilitiesController = require("./controllers/utilities.controller"),
+    runCron = require("./utilities/cron");
 
 // initialization
 createConnection();
-// populateDatabase();
+populateDatabase();
+runCron();
+
 
 // settings
 app.use(express.json());

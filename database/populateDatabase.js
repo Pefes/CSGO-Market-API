@@ -1,6 +1,7 @@
 const db = require("./defineSchemas"),
     items = require("../data/items.data"),
-    containersData = require("../data/containersData");
+    containersData = require("../data/containersData"),
+    lastOpenedItemsData = require("../data/lastOpenedItemsData");
 
 
 const getItemName = (itemName) => {
@@ -47,6 +48,16 @@ const populateItems = () => {
     })
     .catch(error => {
         console.log("[populateDatabase.js] Error occured: " + error);
+    });
+
+    db.LastOpened.collection.drop().then(() => {
+        db.LastOpened.insertMany(lastOpenedItemsData)
+        .then(() => {
+            console.log("[populateDatabse.js] LastOpenedItems populated");
+        })
+        .catch(error => {
+            console.log("[populateDatabase.js] Error occured: " + error);
+        });
     });
 }
 

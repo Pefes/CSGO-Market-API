@@ -1,0 +1,223 @@
+module.exports = [
+    {
+        "containerName": "Openable Case",
+        "containerIconUrl": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXU5A1PIYQNqhpOSV-fRPasw8rsRVx4MwFo5_T3eAQ3i6DMIW0X7ojiwoHax6egMOKGxj4G68Nz3-jCp4itjFWx-ktqfSmtcwqVx6sT",
+        "itemName": "AK-47 | Baroque Purple",
+        "itemIconUrl": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpot7HxfDhoyszedDNH-NOJhJWZh_vxDLPUl31Ipp1w27GWoYmk21Dt8xI9ZGD3coPBIwBvZl6CqQLslObo0MC-6MubnXt9-n51KSM_V14",
+        "itemType": "Weapon",
+        "itemExterior": "Factory New",
+        "itemRarity": "Industrial Grade",
+        "itemRarityColor": "5e98d9",
+        "itemPrice": 617,
+        "ownerUsername": "Guest1"
+    }, {
+        "containerName": "Openable Case",
+        "containerIconUrl": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXU5A1PIYQNqhpOSV-fRPasw8rsRVx4MwFo5_T3eAQ3i6DMIW0X7ojiwoHax6egMOKGxj4G68Nz3-jCp4itjFWx-ktqfSmtcwqVx6sT",
+        "itemName": "AK-47 | Baroque Purple",
+        "itemIconUrl": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpot7HxfDhoyszedDNH-NOJhJWZh_vxDLPUl31Ipp1w27GWoYmk21Dt8xI9ZGD3coPBIwBvZl6CqQLslObo0MC-6MubnXt9-n51KSM_V14",
+        "itemType": "Weapon",
+        "itemExterior": "Factory New",
+        "itemRarity": "Industrial Grade",
+        "itemRarityColor": "5e98d9",
+        "itemPrice": 617,
+        "ownerUsername": "Guest2"
+    }, {
+        "containerName": "Openable Case",
+        "containerIconUrl": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXU5A1PIYQNqhpOSV-fRPasw8rsRVx4MwFo5_T3eAQ3i6DMIW0X7ojiwoHax6egMOKGxj4G68Nz3-jCp4itjFWx-ktqfSmtcwqVx6sT",
+        "itemName": "AK-47 | Asiimov",
+        "itemIconUrl": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpot7HxfDhjxszJemkV092lnYmGmOHLP7LWnn8fvpMkjOqS99Smiwzk_0VvamH0LIHEdwFqYw2G_QC3lefsjZS4uJXLyWwj5HclxVTx0A",
+        "itemType": "Weapon",
+        "itemExterior": "Factory New",
+        "itemRarity": "Covert",
+        "itemRarityColor": "eb4b4b",
+        "itemPrice": 457,
+        "ownerUsername": "Guest3"
+    }, {
+        "containerName": "Openable Case",
+        "containerIconUrl": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXU5A1PIYQNqhpOSV-fRPasw8rsRVx4MwFo5_T3eAQ3i6DMIW0X7ojiwoHax6egMOKGxj4G68Nz3-jCp4itjFWx-ktqfSmtcwqVx6sT",
+        "itemName": "AK-47 | Baroque Purple",
+        "itemIconUrl": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpot7HxfDhoyszedDNH-NOJhJWZh_vxDLPUl31Ipp1w27GWoYmk21Dt8xI9ZGD3coPBIwBvZl6CqQLslObo0MC-6MubnXt9-n51KSM_V14",
+        "itemType": "Weapon",
+        "itemExterior": "Factory New",
+        "itemRarity": "Industrial Grade",
+        "itemRarityColor": "5e98d9",
+        "itemPrice": 617,
+        "ownerUsername": "Guest4"
+    }, {
+        "containerName": "Openable Case",
+        "containerIconUrl": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXU5A1PIYQNqhpOSV-fRPasw8rsRVx4MwFo5_T3eAQ3i6DMIW0X7ojiwoHax6egMOKGxj4G68Nz3-jCp4itjFWx-ktqfSmtcwqVx6sT",
+        "itemName": "AK-47 | Bloodsport",
+        "itemIconUrl": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpot7HxfDhnwMzJemkV0966m4-PhOf7Ia_um25V4dB8xO3Hpdn22lWxqUc9Zmr0J9XBIw89M1GGqFC8ybzvgMLvvJ6azSE1viM8pSGK5KY2J5A",
+        "itemType": "Weapon",
+        "itemExterior": "Factory New",
+        "itemRarity": "Covert",
+        "itemRarityColor": "eb4b4b",
+        "itemPrice": 901,
+        "ownerUsername": "Guest5"
+    }, {
+        "containerName": "Openable Case",
+        "containerIconUrl": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXU5A1PIYQNqhpOSV-fRPasw8rsRVx4MwFo5_T3eAQ3i6DMIW0X7ojiwoHax6egMOKGxj4G68Nz3-jCp4itjFWx-ktqfSmtcwqVx6sT",
+        "itemName": "AK-47 | Black Laminate",
+        "itemIconUrl": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpot7HxfDhoyszJemkV4N27q4KcqP_xMq3I2GhTupQpi7DCrY2m3AzkrkZrZWz3cdCRcQBraQvX_lPtxOjugJO07svXiSw0Sdo_N6Y",
+        "itemType": "Weapon",
+        "itemExterior": "Factory New",
+        "itemRarity": "Mil-Spec Grade",
+        "itemRarityColor": "4b69ff",
+        "itemPrice": 209,
+        "ownerUsername": "Guest6"
+    }, {
+        "containerName": "Openable Case",
+        "containerIconUrl": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXU5A1PIYQNqhpOSV-fRPasw8rsRVx4MwFo5_T3eAQ3i6DMIW0X7ojiwoHax6egMOKGxj4G68Nz3-jCp4itjFWx-ktqfSmtcwqVx6sT",
+        "itemName": "AK-47 | Black Laminate",
+        "itemIconUrl": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpot7HxfDhoyszJemkV4N27q4KcqP_xMq3I2GhTupQpi7DCrY2m3AzkrkZrZWz3cdCRcQBraQvX_lPtxOjugJO07svXiSw0Sdo_N6Y",
+        "itemType": "Weapon",
+        "itemExterior": "Factory New",
+        "itemRarity": "Mil-Spec Grade",
+        "itemRarityColor": "4b69ff",
+        "itemPrice": 562,
+        "ownerUsername": "Guest7"
+    }, {
+        "containerName": "Openable Case",
+        "containerIconUrl": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXU5A1PIYQNqhpOSV-fRPasw8rsRVx4MwFo5_T3eAQ3i6DMIW0X7ojiwoHax6egMOKGxj4G68Nz3-jCp4itjFWx-ktqfSmtcwqVx6sT",
+        "itemName": "AK-47 | Black Laminate",
+        "itemIconUrl": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpot7HxfDhoyszJemkV4N27q4KcqP_xMq3I2GhTupQpi7DCrY2m3AzkrkZrZWz3cdCRcQBraQvX_lPtxOjugJO07svXiSw0Sdo_N6Y",
+        "itemType": "Weapon",
+        "itemExterior": "Factory New",
+        "itemRarity": "Mil-Spec Grade",
+        "itemRarityColor": "4b69ff",
+        "itemPrice": 471,
+        "ownerUsername": "Guest8"
+    }, {
+        "containerName": "Openable Case",
+        "containerIconUrl": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXU5A1PIYQNqhpOSV-fRPasw8rsRVx4MwFo5_T3eAQ3i6DMIW0X7ojiwoHax6egMOKGxj4G68Nz3-jCp4itjFWx-ktqfSmtcwqVx6sT",
+        "itemName": "AK-47 | Black Laminate",
+        "itemIconUrl": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpot7HxfDhoyszJemkV4N27q4KcqP_xMq3I2GhTupQpi7DCrY2m3AzkrkZrZWz3cdCRcQBraQvX_lPtxOjugJO07svXiSw0Sdo_N6Y",
+        "itemType": "Weapon",
+        "itemExterior": "Factory New",
+        "itemRarity": "Mil-Spec Grade",
+        "itemRarityColor": "4b69ff",
+        "itemPrice": 330,
+        "ownerUsername": "Guest9"
+    }, {
+        "containerName": "Openable Case",
+        "containerIconUrl": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXU5A1PIYQNqhpOSV-fRPasw8rsRVx4MwFo5_T3eAQ3i6DMIW0X7ojiwoHax6egMOKGxj4G68Nz3-jCp4itjFWx-ktqfSmtcwqVx6sT",
+        "itemName": "Extra rare item",
+        "itemIconUrl": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9Q1LO5kNoBhSQl-fROuh28rQR1R2KQFoprOrFBFp0OfHYyQM6ou0l4HfwKekYr-FwG0CuJMp077CrdX3iVHnqhFvYzv7IoOXelU6N0aQpAYzSeIpOQ",
+        "itemType": "Weapon",
+        "itemExterior": "Factory New",
+        "itemRarity": "Extra rare",
+        "itemRarityColor": "ffc800",
+        "itemPrice": 821,
+        "ownerUsername": "Guest10"
+    }, {
+        "containerName": "Openable Case",
+        "containerIconUrl": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXU5A1PIYQNqhpOSV-fRPasw8rsRVx4MwFo5_T3eAQ3i6DMIW0X7ojiwoHax6egMOKGxj4G68Nz3-jCp4itjFWx-ktqfSmtcwqVx6sT",
+        "itemName": "AK-47 | Case Hardened",
+        "itemIconUrl": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpot7HxfDhhwszHeDFH6OO7kYSCgvq6Yu-EwzsIuZIj3uiY99WmiwGx_kc9Zjr6JYHBIwM5MFHX-Fi9w-u-1Ij84soNG54bQA",
+        "itemType": "Weapon",
+        "itemExterior": "Factory New",
+        "itemRarity": "Classified",
+        "itemRarityColor": "d32ce6",
+        "itemPrice": 54,
+        "ownerUsername": "Guest11"
+    }, {
+        "containerName": "Openable Case",
+        "containerIconUrl": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXU5A1PIYQNqhpOSV-fRPasw8rsRVx4MwFo5_T3eAQ3i6DMIW0X7ojiwoHax6egMOKGxj4G68Nz3-jCp4itjFWx-ktqfSmtcwqVx6sT",
+        "itemName": "AK-47 | Baroque Purple",
+        "itemIconUrl": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpot7HxfDhoyszedDNH-NOJhJWZh_vxDLPUl31Ipp1w27GWoYmk21Dt8xI9ZGD3coPBIwBvZl6CqQLslObo0MC-6MubnXt9-n51KSM_V14",
+        "itemType": "Weapon",
+        "itemExterior": "Factory New",
+        "itemRarity": "Industrial Grade",
+        "itemRarityColor": "5e98d9",
+        "itemPrice": 217,
+        "ownerUsername": "Guest12"
+    }, {
+        "containerName": "Openable Case",
+        "containerIconUrl": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXU5A1PIYQNqhpOSV-fRPasw8rsRVx4MwFo5_T3eAQ3i6DMIW0X7ojiwoHax6egMOKGxj4G68Nz3-jCp4itjFWx-ktqfSmtcwqVx6sT",
+        "itemName": "AK-47 | Aquamarine Revenge",
+        "itemIconUrl": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpot7HxfDhjxszJemkV09-5gZKKkPLLMrfFqWNU6dNoxL3H94qm3Ffm_RE6amn2ctWXdlI2ZwqB-FG_w-7s0ZK-7cjLzyE37HI8pSGKrIDGOAI",
+        "itemType": "Weapon",
+        "itemExterior": "Factory New",
+        "itemRarity": "Covert",
+        "itemRarityColor": "eb4b4b",
+        "itemPrice": 695,
+        "ownerUsername": "Guest13"
+    }, {
+        "containerName": "Openable Case",
+        "containerIconUrl": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXU5A1PIYQNqhpOSV-fRPasw8rsRVx4MwFo5_T3eAQ3i6DMIW0X7ojiwoHax6egMOKGxj4G68Nz3-jCp4itjFWx-ktqfSmtcwqVx6sT",
+        "itemName": "AK-47 | Bloodsport",
+        "itemIconUrl": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpot7HxfDhnwMzJemkV0966m4-PhOf7Ia_um25V4dB8xO3Hpdn22lWxqUc9Zmr0J9XBIw89M1GGqFC8ybzvgMLvvJ6azSE1viM8pSGK5KY2J5A",
+        "itemType": "Weapon",
+        "itemExterior": "Factory New",
+        "itemRarity": "Covert",
+        "itemRarityColor": "eb4b4b",
+        "itemPrice": 445,
+        "ownerUsername": "Guest14"
+    }, {
+        "containerName": "Openable Case",
+        "containerIconUrl": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXU5A1PIYQNqhpOSV-fRPasw8rsRVx4MwFo5_T3eAQ3i6DMIW0X7ojiwoHax6egMOKGxj4G68Nz3-jCp4itjFWx-ktqfSmtcwqVx6sT",
+        "itemName": "AK-47 | Black Laminate",
+        "itemIconUrl": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpot7HxfDhoyszJemkV4N27q4KcqP_xMq3I2GhTupQpi7DCrY2m3AzkrkZrZWz3cdCRcQBraQvX_lPtxOjugJO07svXiSw0Sdo_N6Y",
+        "itemType": "Weapon",
+        "itemExterior": "Factory New",
+        "itemRarity": "Mil-Spec Grade",
+        "itemRarityColor": "4b69ff",
+        "itemPrice": 278,
+        "ownerUsername": "Guest15"
+    }, {
+        "containerName": "Openable Case",
+        "containerIconUrl": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXU5A1PIYQNqhpOSV-fRPasw8rsRVx4MwFo5_T3eAQ3i6DMIW0X7ojiwoHax6egMOKGxj4G68Nz3-jCp4itjFWx-ktqfSmtcwqVx6sT",
+        "itemName": "AK-47 | Aquamarine Revenge",
+        "itemIconUrl": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpot7HxfDhjxszJemkV09-5gZKKkPLLMrfFqWNU6dNoxL3H94qm3Ffm_RE6amn2ctWXdlI2ZwqB-FG_w-7s0ZK-7cjLzyE37HI8pSGKrIDGOAI",
+        "itemType": "Weapon",
+        "itemExterior": "Factory New",
+        "itemRarity": "Covert",
+        "itemRarityColor": "eb4b4b",
+        "itemPrice": 323,
+        "ownerUsername": "Guest16"
+    }, {
+        "containerName": "Openable Case",
+        "containerIconUrl": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXU5A1PIYQNqhpOSV-fRPasw8rsRVx4MwFo5_T3eAQ3i6DMIW0X7ojiwoHax6egMOKGxj4G68Nz3-jCp4itjFWx-ktqfSmtcwqVx6sT",
+        "itemName": "AK-47 | Aquamarine Revenge",
+        "itemIconUrl": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpot7HxfDhjxszJemkV09-5gZKKkPLLMrfFqWNU6dNoxL3H94qm3Ffm_RE6amn2ctWXdlI2ZwqB-FG_w-7s0ZK-7cjLzyE37HI8pSGKrIDGOAI",
+        "itemType": "Weapon",
+        "itemExterior": "Factory New",
+        "itemRarity": "Covert",
+        "itemRarityColor": "eb4b4b",
+        "itemPrice": 729,
+        "ownerUsername": "Guest17"
+    }, {
+        "containerName": "Openable Case",
+        "containerIconUrl": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXU5A1PIYQNqhpOSV-fRPasw8rsRVx4MwFo5_T3eAQ3i6DMIW0X7ojiwoHax6egMOKGxj4G68Nz3-jCp4itjFWx-ktqfSmtcwqVx6sT",
+        "itemName": "AK-47 | Case Hardened",
+        "itemIconUrl": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpot7HxfDhhwszHeDFH6OO7kYSCgvq6Yu-EwzsIuZIj3uiY99WmiwGx_kc9Zjr6JYHBIwM5MFHX-Fi9w-u-1Ij84soNG54bQA",
+        "itemType": "Weapon",
+        "itemExterior": "Factory New",
+        "itemRarity": "Classified",
+        "itemRarityColor": "d32ce6",
+        "itemPrice": 452,
+        "ownerUsername": "Guest18"
+    }, {
+        "containerName": "Openable Case",
+        "containerIconUrl": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXU5A1PIYQNqhpOSV-fRPasw8rsRVx4MwFo5_T3eAQ3i6DMIW0X7ojiwoHax6egMOKGxj4G68Nz3-jCp4itjFWx-ktqfSmtcwqVx6sT",
+        "itemName": "AK-47 | Blue Laminate",
+        "itemIconUrl": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpot7HxfDhoyszJemkV4N27q4KHgvLLPr7Vn35cppJ02uyUrI2h3wDkrkFsZz-gLdXHIA87MFjTqFm-wevvjcC0tZrPnXp9-n51Y5J6evE",
+        "itemType": "Weapon",
+        "itemExterior": "Factory New",
+        "itemRarity": "Restricted",
+        "itemRarityColor": "8847ff",
+        "itemPrice": 560,
+        "ownerUsername": "Guest19"
+    }, {
+        "containerName": "Openable Case",
+        "containerIconUrl": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXU5A1PIYQNqhpOSV-fRPasw8rsRVx4MwFo5_T3eAQ3i6DMIW0X7ojiwoHax6egMOKGxj4G68Nz3-jCp4itjFWx-ktqfSmtcwqVx6sT",
+        "itemName": "AK-47 | Black Laminate",
+        "itemIconUrl": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpot7HxfDhoyszJemkV4N27q4KcqP_xMq3I2GhTupQpi7DCrY2m3AzkrkZrZWz3cdCRcQBraQvX_lPtxOjugJO07svXiSw0Sdo_N6Y",
+        "itemType": "Weapon",
+        "itemExterior": "Factory New",
+        "itemRarity": "Mil-Spec Grade",
+        "itemRarityColor": "4b69ff",
+        "itemPrice": 66,
+        "ownerUsername": "Guest20"
+    }
+];
