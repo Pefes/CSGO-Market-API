@@ -25,7 +25,7 @@ module.exports = {
     getTryOutItems: async () => {
         try {
             const openableItems = await db.Item.find({ openable: true }).limit(3);
-            return getResponsePayload(MS.SUCCESS, null, { openableItems: openableItems, querySize: 3 });
+            return getResponsePayload(MS.SUCCESS, null, { items: openableItems, querySize: 3 });
         } catch (error) {
             return getResponsePayload(MS.FAIL, MS.GET_TRY_OUT_ITEMS_FAIL, null);
         }
